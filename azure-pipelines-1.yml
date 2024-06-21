@@ -1,12 +1,3 @@
-pool:
-  name: Default
-  demands:
-    - agent.name -equals SelfHostedAgent
-
-steps:
-- task: UseNode@2
+- task: DotNetCoreCLI@2
   inputs:
-    version: '14.x'
-- script: |
-    echo Hello, world!
-    node -v
+    command: 'build'
